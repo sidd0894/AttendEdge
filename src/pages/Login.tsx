@@ -45,7 +45,7 @@ export default function Login() {
     setIsSubmitting(true);
     try {
       await signIn(data.email, data.password);
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (err: unknown) {
       const code = (err as { code?: string })?.code ?? "";
       setError(FIREBASE_ERRORS[code] || "Something went wrong. Please try again.");

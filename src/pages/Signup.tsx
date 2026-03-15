@@ -51,7 +51,7 @@ export default function Signup() {
     setIsSubmitting(true);
     try {
       await signUp(data.email, data.password, data.displayName);
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (err: unknown) {
       const code = (err as { code?: string })?.code ?? "";
       setError(FIREBASE_ERRORS[code] || "Something went wrong. Please try again.");
